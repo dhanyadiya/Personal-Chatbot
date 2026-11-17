@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diya — Your Personal Companion</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">d</div>
+        <div>
+          <h1>Diya</h1>
+          <p>Your little corner of calm</p>
+        </div>
+      </div>
+      <button id="newChatBtn" class="new-chat">＋ New conversation</button>
+      <div class="sidebar-section">
+        <p class="section-label">YOUR SPACE</p>
+        <div class="side-note"><span class="dot"></span> Local AI companion</div>
+        <div class="side-note">✿ Sage green mood</div>
+      </div>
+      <div class="memory-panel">
+        <div class="memory-heading">
+          <span>Saved memories</span>
+          <span class="memory-count" id="memoryCount">0</span>
+        </div>
+        <p class="memory-help">Tell me <code>remember: ...</code> to save something.</p>
+        <ul id="memoryList" class="memory-list"></ul>
+      </div>
+      <p class="privacy-note">♡ Your chats and memories stay in a local SQLite file on this computer.</p>
+    </aside>
+
+    <section class="chat-area">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark small">d</span><strong>Diya</strong></div>
+        <div class="online-status"><span class="dot"></span> Local companion</div>
+        <button id="clearBtn" class="text-button" title="Delete conversation history">Clear chat</button>
+      </header>
+
+      <div id="messages" class="messages">
+        <div class="welcome" id="welcome">
+          <div class="welcome-flower">✿</div>
+          <p class="eyebrow">A LITTLE SPACE JUST FOR YOU</p>
+          <h2>Hi, I'm Diya <span>♡</span></h2>
+          <p class="welcome-copy">I'm here to listen, help you think things through, or simply keep you company. What's on your mind today?</p>
+          <div class="suggestions">
+            <button class="suggestion">Help me plan my day</button>
+            <button class="suggestion">Teach me something new</button>
+            <button class="suggestion">I need a little motivation</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="composer-wrap">
+        <form id="chatForm" class="composer">
+          <textarea id="messageInput" rows="1" maxlength="4000" placeholder="Write what's on your mind..." aria-label="Your message"></textarea>
+          <button id="sendBtn" class="send-button" type="submit" aria-label="Send message">↑</button>
+        </form>
+        <p class="composer-footnote">Diya runs locally with Ollama · Press Enter to send, Shift + Enter for a new line</p>
+      </div>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

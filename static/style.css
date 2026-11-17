@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+:root {
+  --sage: #6e8b72;
+  --sage-dark: #42624b;
+  --sage-light: #e7eee5;
+  --cream: #faf9f4;
+  --paper: #fffefa;
+  --ink: #26362b;
+  --muted: #7b877d;
+  --line: #e8ebe3;
+  --user: #e7eee5;
+  --shadow: 0 12px 40px rgba(50, 74, 54, .07);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--cream); color: var(--ink); font-family: "DM Sans", sans-serif; }
+button, textarea { font: inherit; }
+button { cursor: pointer; }
+.app-shell { display: grid; grid-template-columns: 285px minmax(0, 1fr); min-height: 100vh; max-width: 1600px; margin: 0 auto; background: var(--paper); }
+.sidebar { display: flex; flex-direction: column; padding: 28px 20px 20px; background: #f2f5ef; border-right: 1px solid var(--line); min-height: 100vh; }
+.brand { display: flex; gap: 12px; align-items: center; margin: 2px 0 28px 3px; }
+.brand-mark { width: 45px; height: 45px; border-radius: 16px 16px 16px 5px; display: grid; place-items: center; background: var(--sage); color: white; font-family: "Playfair Display", serif; font-size: 30px; box-shadow: 0 5px 12px #6e8b7226; }
+.brand h1 { font: 600 25px "Playfair Display", serif; margin: 0; letter-spacing: -.4px; }
+.brand p { margin: 3px 0 0; color: var(--muted); font-size: 11px; }
+.new-chat { border: 1px solid #d7e1d5; background: #fffefa; color: var(--sage-dark); border-radius: 12px; padding: 12px; text-align: left; font-weight: 600; transition: .2s; }
+.new-chat:hover, .suggestion:hover { background: var(--sage-light); }
+.sidebar-section { margin-top: 31px; }
+.section-label, .eyebrow { color: #8b9a8b; font-size: 10px; letter-spacing: 1.8px; font-weight: 700; }
+.section-label { margin: 0 0 15px 4px; }
+.side-note { padding: 9px 5px; color: #637267; font-size: 13px; }
+.dot { width: 7px; height: 7px; background: #83a889; display: inline-block; border-radius: 50%; margin-right: 8px; }
+.memory-panel { border-top: 1px solid #dfe6dc; margin-top: 28px; padding-top: 20px; }
+.memory-heading { display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 13px; }
+.memory-count { background: #dfe9dc; color: var(--sage-dark); border-radius: 20px; padding: 3px 8px; font-size: 11px; }
+.memory-help { color: var(--muted); font-size: 11px; line-height: 1.6; }
+code { background: #e5ebe2; padding: 2px 4px; border-radius: 4px; }
+.memory-list { list-style: none; margin: 8px 0 0; padding: 0; }
+.memory-list li { display: flex; justify-content: space-between; gap: 8px; align-items: start; font-size: 12px; line-height: 1.5; color: #657267; padding: 7px 0; border-bottom: 1px solid #e7ece4; overflow-wrap: anywhere; }
+.delete-memory { border: 0; background: transparent; color: #9a7770; padding: 0 3px; }
+.privacy-note { margin: auto 0 0; padding-top: 22px; color: #8a958a; font-size: 11px; line-height: 1.7; }
+.chat-area { min-height: 100vh; display: flex; flex-direction: column; position: relative; }
+.topbar { height: 73px; border-bottom: 1px solid #eff0ea; display: flex; align-items: center; justify-content: flex-end; gap: 20px; padding: 0 36px; }
+.online-status { color: #7e8a7e; font-size: 12px; }
+.text-button { background: transparent; border: 0; color: #829084; font-size: 12px; }
+.text-button:hover { color: #9a655d; }
+.mobile-brand { display: none; }
+.messages { width: 100%; max-width: 850px; margin: 0 auto; padding: 35px 36px 25px; flex: 1; overflow-y: auto; }
+.welcome { max-width: 560px; margin: 7vh auto 30px; text-align: center; }
+.welcome-flower { color: #7e9b80; font-size: 36px; margin-bottom: 18px; }
+.eyebrow { margin: 0 0 13px; }
+.welcome h2 { font: 500 clamp(32px, 4vw, 44px) "Playfair Display", serif; margin: 0; letter-spacing: -.8px; }
+.welcome h2 span { color: #8daa8a; }
+.welcome-copy { max-width: 440px; margin: 16px auto 24px; font-size: 14px; line-height: 1.8; color: #7b877d; }
+.suggestions { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; }
+.suggestion { border: 1px solid #e1e8df; background: #fffefa; color: #6d7d6e; padding: 10px 13px; border-radius: 22px; font-size: 12px; transition: .2s; }
+.message { display: flex; gap: 11px; margin: 20px 0; align-items: flex-start; }
+.message.user { flex-direction: row-reverse; }
+.avatar { flex: 0 0 31px; height: 31px; border-radius: 11px 11px 11px 4px; display: grid; place-items: center; background: var(--sage); color: white; font: 18px "Playfair Display", serif; }
+.user .avatar { background: #dce5d8; color: #526b55; border-radius: 11px 11px 4px 11px; font: 13px "DM Sans", sans-serif; }
+.bubble { max-width: min(78%, 610px); border-radius: 4px 16px 16px 16px; background: #f5f6f1; padding: 13px 16px; line-height: 1.75; font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.user .bubble { background: var(--user); border-radius: 16px 4px 16px 16px; }
+.typing { color: #849285; font-style: italic; }
+.composer-wrap { padding: 15px 36px 23px; width: 100%; max-width: 850px; margin: 0 auto; }
+.composer { display: flex; align-items: end; gap: 12px; border: 1px solid #e3e9e0; background: white; border-radius: 18px; padding: 12px 12px 12px 18px; box-shadow: var(--shadow); }
+.composer:focus-within { border-color: #b5c8b3; }
+textarea { resize: none; outline: none; border: 0; flex: 1; max-height: 160px; background: transparent; color: var(--ink); padding: 8px 0; line-height: 1.5; font-size: 14px; }
+textarea::placeholder { color: #a0aaa0; }
+.send-button { border: 0; background: var(--sage); color: white; width: 39px; height: 39px; border-radius: 13px; font-size: 24px; line-height: 1; transition: .2s; }
+.send-button:hover { background: var(--sage-dark); }
+.send-button:disabled { opacity: .5; cursor: wait; }
+.composer-footnote { text-align: center; color: #a0a99f; font-size: 10px; margin: 11px 0 0; }
+@media (max-width: 760px) {
+  .app-shell { display: block; }
+  .sidebar { display: none; }
+  .chat-area { min-height: 100dvh; }
+  .topbar { height: 62px; padding: 0 17px; justify-content: space-between; }
+  .mobile-brand { display: flex; align-items: center; gap: 9px; }
+  .mobile-brand strong { font: 600 20px "Playfair Display", serif; }
+  .brand-mark.small { width: 31px; height: 31px; border-radius: 11px 11px 11px 4px; font-size: 22px; }
+  .messages { padding: 22px 16px; }
+  .welcome { margin-top: 8vh; }
+  .composer-wrap { padding: 12px 13px 18px; }
+  .bubble { max-width: 86%; }
+}
